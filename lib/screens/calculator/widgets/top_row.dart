@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task7_calculator_app/screens/calculator/widgets/app_text.dart';
 import 'package:task7_calculator_app/screens/calculator/widgets/number_container.dart';
 
-Widget topRow() {
+Widget topRow(int num1, int num2, num result, String operation) {
   return Container(
     width: double.infinity,
     height: 200,
@@ -13,11 +13,11 @@ Widget topRow() {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        NumberContainer(number: '0'),
-        AppText(text: " + ", isBold: true),
-        NumberContainer(number: '0'),
+        NumberContainer(number: '$num1'),
+        AppText(text: " $operation ", isBold: true),
+        NumberContainer(number: '$num2'),
         AppText(text: " = ", isBold: true),
-        NumberContainer(number: '0'),
+        NumberContainer(number: '$result', width: 120),
       ],
     ),
   );

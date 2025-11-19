@@ -3,11 +3,17 @@ import 'package:task7_calculator_app/screens/calculator/widgets/app_text.dart';
 
 class OperationButton extends StatelessWidget {
   final String text;
-  const OperationButton({super.key, required this.text});
+  final VoidCallback onPressed;
+  const OperationButton({
+    super.key,
+    required this.text,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: onPressed,
       child: Container(
         width: 190,
         padding: EdgeInsets.symmetric(vertical: 10),

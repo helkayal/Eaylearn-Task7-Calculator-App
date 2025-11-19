@@ -22,6 +22,7 @@ class AppText extends StatelessWidget {
         fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
         color: color,
       ),
+      overflow: TextOverflow.ellipsis,
     );
   }
 }

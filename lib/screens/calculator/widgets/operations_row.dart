@@ -1,24 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:task7_calculator_app/screens/calculator/widgets/operation_button.dart';
 
-Widget operationsRow() {
+Widget operationsRow({
+  required VoidCallback onAddition,
+  required VoidCallback onSubtraction,
+  required VoidCallback onMultiplication,
+  required VoidCallback onDivision,
+  required VoidCallback onExponentiation,
+  required VoidCallback onModulus,
+}) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       Column(
         spacing: 10,
         children: [
-          OperationButton(text: "+ Addition"),
-          OperationButton(text: "* Multiplication"),
-          OperationButton(text: "^ Exponentiation"),
+          OperationButton(text: "+ Addition", onPressed: onAddition),
+          OperationButton(
+            text: "* Multiplication",
+            onPressed: onMultiplication,
+          ),
+          OperationButton(
+            text: "^ Exponentiation",
+            onPressed: onExponentiation,
+          ),
         ],
       ),
       Column(
         spacing: 10,
         children: [
-          OperationButton(text: "- Subtraction"),
-          OperationButton(text: "/ Division"),
-          OperationButton(text: "% Modulus"),
+          OperationButton(text: "- Subtraction", onPressed: onSubtraction),
+          OperationButton(text: "/ Division", onPressed: onDivision),
+          OperationButton(text: "% Modulus", onPressed: onModulus),
         ],
       ),
     ],

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:task7_calculator_app/screens/calculator/widgets/app_text.dart';
 
-Widget resetRow() {
+Widget resetRow({required VoidCallback onReset}) {
   return InkWell(
+    onTap: onReset,
     child: Container(
       height: 60,
       width: 200,

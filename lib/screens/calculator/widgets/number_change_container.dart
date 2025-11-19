@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:task7_calculator_app/screens/calculator/widgets/app_text.dart';
+import 'package:task7_calculator_app/screens/calculator/widgets/circle_button.dart';
 
 class NumberChangeContainer extends StatelessWidget {
   final String text;
-  const NumberChangeContainer({super.key, required this.text});
+  final int value;
+  final VoidCallback onIncrement;
+  final VoidCallback onDecrement;
+
+  const NumberChangeContainer({
+    super.key,
+    required this.text,
+    required this.value,
+    required this.onIncrement,
+    required this.onDecrement,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,26 +23,9 @@ class NumberChangeContainer extends StatelessWidget {
         AppText(text: text, fontSize: 22),
         Row(
           children: [
-            Container(
-              height: 40,
-              width: 40,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.blueGrey, width: 2),
-              ),
-              child: Center(child: AppText(text: "+", fontSize: 20)),
-            ),
+            CircleButton(symbol: "+", onTap: onIncrement),
             SizedBox(width: 20),
-            Container(
-              height: 40,
-              width: 40,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.blueGrey, width: 2),
-              ),
-              child: Center(child: AppText(text: "-", fontSize: 24)),
-            ),
+            CircleButton(symbol: "-", onTap: onDecrement),
           ],
         ),
       ],
