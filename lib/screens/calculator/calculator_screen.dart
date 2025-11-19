@@ -44,14 +44,22 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         case '/':
           if (num2 != 0) {
             result = _formatResult(num1 / num2);
+          } else {
+            result = 0;
           }
           break;
         case '^':
-          result = _formatResult(pow(num1.toDouble(), num2.toDouble()));
+          if (num2 != 0) {
+            result = _formatResult(pow(num1.toDouble(), num2.toDouble()));
+          } else {
+            result = 0;
+          }
           break;
         case '%':
           if (num2 != 0) {
             result = _formatResult(num1 % num2);
+          } else {
+            result = 0;
           }
           break;
       }
