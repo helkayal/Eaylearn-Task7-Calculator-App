@@ -86,7 +86,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 onNum2Increment: () => _updateNum2(1),
                 onNum2Decrement: () => _updateNum2(-1),
               ),
-              SizedBox(height: 40),
+              SizedBox(height: 60),
               operationsRow(
                 onAddition: () => performOperation('+'),
                 onSubtraction: () => performOperation('-'),

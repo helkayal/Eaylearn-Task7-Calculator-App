@@ -13,7 +13,7 @@ Widget operationsRow({
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       Column(
-        spacing: 10,
+        spacing: 20,
         children: [
           OperationButton(text: "+ Addition", onPressed: onAddition),
           OperationButton(
@@ -27,7 +27,7 @@ Widget operationsRow({
         ],
       ),
       Column(
-        spacing: 10,
+        spacing: 20,
         children: [
           OperationButton(text: "- Subtraction", onPressed: onSubtraction),
           OperationButton(text: "/ Division", onPressed: onDivision),
